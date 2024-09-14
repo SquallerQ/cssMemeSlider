@@ -38,9 +38,17 @@ body {
   max-width: 500px;
   max-height: 300px;
 }
+.text-inner {
+  width: 100%;
+  /* display: inline; */
+  padding: 40px 0;
+  /* overflow: hidden; */
+
+}
 
 .text {
   opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 .image {
   opacity: 0;
@@ -88,4 +96,30 @@ input[id="slide4"]:checked~.slider-inner #img4 {
 input[id="slide4"]:checked~.text-inner #text4 {
   opacity: 1;
   transform: translateY(-400%);
+}
+
+
+.buttons-inner {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 30px;
+  width: 100%;
+  transform: translateY(-750%);
+}
+
+.buttons-inner label {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.span {
+  padding: 30px;
+  border-radius: 50%;
 }
