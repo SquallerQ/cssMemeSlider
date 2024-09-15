@@ -5,20 +5,29 @@
 }
 img {
   width: 100%; 
-  /* height: auto; */
+  height: 100%;
   object-fit: cover; 
+
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #000;
 }
 body {
   font-family: "Fascinate Inline", system-ui;
   font-weight: 400;
   font-style: normal;
+  background-image: url('img/background-image.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  overflow-y: hidden;
 }
 
 
 .title {
   text-align: center;
-  font-size: 40px;
-  padding: 40px 0 30px 0;
+  font-size: calc(0.9rem + 2vw);
+  padding: calc(0.4rem + 2vw) 0;
 }
 .container {
   margin: 0 auto;
@@ -27,31 +36,31 @@ body {
   justify-content: center;
   align-items: center;
 
-  max-width: 700px;
+  max-width: 37.5rem;
+
+  contain: layout;
 }
 
 .slider-inner {
-  /* width: 100%; */
   overflow: hidden;
-  /* object-fit: contain; */
-  /* max-height: 300px; */
-  max-width: 500px;
-  max-height: 400px;
+
+  max-width: 43.75rem; 
+  max-height: 28.125rem; 
 }
 .text-inner {
   width: 100%;
 }
 
 .text {
-  font-size: 20px;
+  font-size: 1.25rem;
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 .image {
   opacity: 0;
-  transition: opacity 0.8s ease-in-out, transform 0.9s ease-in-out;
+  transition: opacity 1.5s ease-in-out, transform 1.2s ease-in-out;
 }
-
+  
 
 /* fake slide */
 input[id="slide0"]:checked~.slider-inner #img0 {
@@ -62,11 +71,11 @@ input[id="slide0"]:checked~.text-inner #text0 {
   opacity: 1;
 }
 input[id="slide0"]:checked~.buttons-inner label[for="slide1"] {
-  border: 1px solid #000;
-  background-color: #8a90d7;
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
 }
 
-/* four slides */
+/* slide 1 */
 input[id="slide1"]:checked~.slider-inner #img1 {
   opacity: 1;
   transform: translateY(-100%);
@@ -76,10 +85,10 @@ input[id="slide1"]:checked~.text-inner #text1 {
   transform: translateY(-100%);
 }
 input[id="slide1"]:checked~.buttons-inner label[for="slide1"] {
-  border: 1px solid #000;
-  background-color: #8a90d7;
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
 }
-
+/* slide 2 */
 input[id="slide2"]:checked~.slider-inner #img2 {
   opacity: 1;
   transform: translateY(-200%);
@@ -89,10 +98,10 @@ input[id="slide2"]:checked~.text-inner #text2 {
   transform: translateY(-200%);
 }
 input[id="slide2"]:checked~.buttons-inner label[for="slide2"] {
-  border: 1px solid #000;
-  background-color: #8a90d7;
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
 }
-
+/* slide 3 */
 input[id="slide3"]:checked~.slider-inner #img3 {
   opacity: 1;
   transform: translateY(-300%);
@@ -102,10 +111,10 @@ input[id="slide3"]:checked~.text-inner #text3 {
   transform: translateY(-300%);
 }
 input[id="slide3"]:checked~.buttons-inner label[for="slide3"] {
-  border: 1px solid #000;
-  background-color: #8a90d7;
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
 }
-
+/* slide 4 */
 input[id="slide4"]:checked~.slider-inner #img4 {
   opacity: 1;
   transform: translateY(-400%);
@@ -115,25 +124,24 @@ input[id="slide4"]:checked~.text-inner #text4 {
   transform: translateY(-400%);
 }
 input[id="slide4"]:checked~.buttons-inner label[for="slide4"] {
-  border: 1px solid #000;
-  background-color: #8a90d7;
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
 }
-
 
 .buttons-inner {
   display: flex;
   justify-content: flex-end;
 
-  gap: 30px;
+  gap: 1.875rem;
   width: 100%;
   transform: translateY(-650%);
 }
 
 .buttons-inner label {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #8a90d7;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid #fff;
   background-color: transparent;
   border-radius: 50%;
 
@@ -141,27 +149,39 @@ input[id="slide4"]:checked~.buttons-inner label[for="slide4"] {
   justify-content: center;
   align-items: center; 
 
-  transition: .5s all;
+  transition: .7s all;
 }
 .span {
-  padding: 30px;
+  padding: 1.875rem;
 }
 .buttons-inner label:hover {
-  border: 2px solid #000;
-  background-color: #d3d3d0;
+  border: 0.125rem solid #000;
+  background-color: #fff;
+  transition: .7s all;
 }
 input[type="radio"] {
   display: none;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
+  body {
+    background-size: auto;
+    background-position-x: right;
+  }
+  .container {
+    padding: 0 0.9375rem;
+  }
+  .slider-inner {
+    aspect-ratio: 16 / 12;
+  }
   .text-inner {
-    margin-top: 60px;
-    width: auto;
-    text-align: center;
+    margin-top: 3.75rem;
+  }
+  .text {
+    font-size: calc(0.8rem + 1.2vw);
   }
   .buttons-inner {
     justify-content: center;
-    transform: translateY(-950%);
+    transform: translateY(-850%);
   }
 }
