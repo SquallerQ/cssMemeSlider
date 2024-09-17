@@ -159,6 +159,11 @@ input[id="slide4"]:checked~.buttons-inner label[for="slide4"] {
   background-color: #fff;
   transition: .7s all;
 }
+.buttons-inner label:active {
+  border: 0.125rem solid #2e7781;
+  background-color: #2e7781;
+  transition: .17s all;
+}
 input[type="radio"] {
   display: none;
 }
