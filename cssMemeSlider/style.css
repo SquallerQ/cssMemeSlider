@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; 
+
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #000;
+}
+body {
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-image: url('img/background-image.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  overflow-y: hidden;
+}
+
+
+.title {
+  text-align: center;
+  font-size: calc(0.9rem + 2vw);
+  padding: calc(0.4rem + 2vw) 0;
+}
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 37.5rem;
+
+  contain: layout;
+}
+
+.slider-inner {
+  overflow: hidden;
+
+  max-width: 43.75rem; 
+  max-height: 28.125rem; 
+}
+.text-inner {
+  width: 100%;
+}
+
+.text {
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+.image {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 1.2s ease-in-out;
+}
+  
+
+/* fake slide */
+input[id="slide0"]:checked~.slider-inner #img0 {
+  opacity: 1;
+  transform: translateX(0%);
+}
+input[id="slide0"]:checked~.text-inner #text0 {
+  opacity: 1;
+}
+input[id="slide0"]:checked~.buttons-inner label[for="slide1"] {
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
+}
+
+/* slide 1 */
+input[id="slide1"]:checked~.slider-inner #img1 {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+input[id="slide1"]:checked~.text-inner #text1 {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+input[id="slide1"]:checked~.buttons-inner label[for="slide1"] {
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
+}
+/* slide 2 */
+input[id="slide2"]:checked~.slider-inner #img2 {
+  opacity: 1;
+  transform: translateY(-200%);
+}
+input[id="slide2"]:checked~.text-inner #text2 {
+  opacity: 1;
+  transform: translateY(-200%);
+}
+input[id="slide2"]:checked~.buttons-inner label[for="slide2"] {
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
+}
+/* slide 3 */
+input[id="slide3"]:checked~.slider-inner #img3 {
+  opacity: 1;
+  transform: translateY(-300%);
+}
+input[id="slide3"]:checked~.text-inner #text3 {
+  opacity: 1;
+  transform: translateY(-300%);
+}
+input[id="slide3"]:checked~.buttons-inner label[for="slide3"] {
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
+}
+/* slide 4 */
+input[id="slide4"]:checked~.slider-inner #img4 {
+  opacity: 1;
+  transform: translateY(-400%);
+}
+input[id="slide4"]:checked~.text-inner #text4 {
+  opacity: 1;
+  transform: translateY(-400%);
+}
+input[id="slide4"]:checked~.buttons-inner label[for="slide4"] {
+  border: 0.0625rem solid #fff;
+  background-color: #fff;
+}
+
+.buttons-inner {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 1.875rem;
+  width: 100%;
+  transform: translateY(-650%);
+}
+
+.buttons-inner label {
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+  transition: .7s all;
+}
+.span {
+  padding: 1.875rem;
+}
+.buttons-inner label:hover {
+  border: 0.125rem solid #000;
+  background-color: #fff;
+  transition: .7s all;
+}
+.buttons-inner label:active {
+  border: 0.125rem solid #2e7781;
+  background-color: #2e7781;
+  transition: .17s all;
+}
+input[type="radio"] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  body {
+    background-size: auto;
+    background-position-x: right;
+  }
+  .container {
+    padding: 0 0.9375rem;
+  }
+  .slider-inner {
+    aspect-ratio: 16 / 12;
+  }
+  .text-inner {
+    margin-top: 3.75rem;
+  }
+  .text {
+    font-size: calc(0.8rem + 1.2vw);
+  }
+  .buttons-inner {
+    justify-content: center;
+    transform: translateY(-850%);
+  }
+}
